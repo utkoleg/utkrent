@@ -4,6 +4,10 @@ import HandImage from "./img/handImg.png"
 import Qr from "./img/qr.png"
 import Appstore from "./img/app-store-icon.png"
 import GooglePlay from "./img/google-play-store-icon.png"
+import Flat1 from "./img/flats/flat.jpg"
+import Flat2 from "./img/flats/flat2.jpg"
+import Flat3 from "./img/flats/flat3.jpg"
+
 
 function HomePage() {
     return (
@@ -53,7 +57,30 @@ function HomePage() {
 
                 <div className="bot-menu">
                     <div className="bot-menu-element">
-                        SDELAT' ELEMENTIKI
+                        <img src={Flat1} alt="flat1"/>
+                        <div className="bot-menu-text">
+                            <h1>Almaty, Al-Farabi 9</h1>
+                            <h2>Самый крутой домешник спору нет</h2>
+                            <button>See more</button>
+                        </div>
+                    </div>
+
+                    <div className="bot-menu-element">
+                        <img src={Flat2} alt="fla2"/>
+                        <div className="bot-menu-text">
+                            <h1>Shymkent, Nursat 1</h1>
+                            <h2>Ну нурсат спорная фигня</h2>
+                            <button>See more</button>
+                        </div>
+                    </div>
+
+                    <div className="bot-menu-element">
+                        <img src={Flat3} alt="flat3"/>
+                        <div className="bot-menu-text">
+                            <h1>Astana, Mangilik el 19</h1>
+                            <h2>Астана для лошков</h2>
+                            <button>See more</button>
+                        </div>
                     </div>
                 </div>
             </div>
