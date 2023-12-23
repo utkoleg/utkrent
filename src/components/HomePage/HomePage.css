@@ -49,10 +49,15 @@
     background:royalblue;
     color:white;
     border-radius: 6px;
+    border: none;
     width: 95px;
     height: 50px;
     margin-right: 5px;
     font-size: 25px;
+}
+
+.searchbar button:hover{
+    opacity: 0.8;
 }
 
 .home-page-app{
@@ -73,6 +78,7 @@
 .image-div img{
     padding-top: 30px;
     width: 90%;
+    box-sizing: content-box;
 }
 
 .image-text{
@@ -113,4 +119,64 @@
 .qr-icons img{
     margin-left: 50px;
     height: 40px;
+}
+
+.home-page-bot{
+    padding-top: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background: black;
+}
+
+.dodots{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dots{
+    width: 74%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    background-image: url("./img/dots.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 150px -250px;
+}
+
+.dots h1{
+    width: 70%;
+    font-size: 60px;
+    opacity: 100%;
+}
+
+.dots h2{
+    font-size: 18px;
+}
+
+.dots button {
+    background: royalblue;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 100px;
+}
+
+.dots button:hover{
+    opacity: 0.8;
+}
+
+.bot-menu{
+    color: white;
+    font-size: 50px;
 }

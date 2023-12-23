@@ -4,9 +4,12 @@ import HandImage from "./img/handImg.png"
 import Qr from "./img/qr.png"
 import Appstore from "./img/app-store-icon.png"
 import GooglePlay from "./img/google-play-store-icon.png"
+
 function HomePage() {
     return (
         <div>
+
+            {/*ПОИСКОВАЯ СТРОКА*/}
             <div className="home-page-banner">
                 <h1>Find your dream place</h1>
                 <div className="searchbar">
@@ -15,6 +18,7 @@ function HomePage() {
                 </div>
             </div>
 
+            {/*МЕДИА*/}
             <div className="home-page-app">
                 <div className="image-div">
                     <img src={HandImage} alt="hand"/>
@@ -30,10 +34,26 @@ function HomePage() {
                             <img src={Qr} alt="qr code"/>
                             <div className="qr-icons">
                                 <img src={Appstore} alt="appstore"/>
-                                <img src={GooglePlay} alt="googleplay" style={{marginTop:"10px"}}/>
+                                <img src={GooglePlay} alt="googleplay" style={{marginTop: "10px"}}/>
                             </div>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="home-page-bot">
+                <div className="dodots">
+                    <div className="dots">
+                        <h1>Best solutions for <span style={{color: "royalblue"}}> you</span></h1>
+                        <h2>lorem ipsum lorem ipsum lorem ipsum </h2>
+                        <button>See offers</button>
+                    </div>
+                </div>
+
+                <div className="bot-menu">
+                    <div className="bot-menu-element">
+                        SDELAT' ELEMENTIKI
                     </div>
                 </div>
             </div>

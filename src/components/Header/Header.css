@@ -19,4 +19,8 @@
     font-size: 17px;
     font-weight: bold;
 }
+.list:hover{
+    text-decoration: underline;
+    color: royalblue;
+}
 
