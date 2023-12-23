@@ -3,10 +3,9 @@
     height: 350px;
 
     /*//image*/
-    /*background-image: url("img/apart2.jpg");*/
-    background-image: url("img/orion.jpg");
+    background-image: url("img/apart2.jpg");
     background-repeat: no-repeat;
-    background-position:0 -150px;
+    background-position:0 -200px;
     background-size: cover;
 
     display: flex;
@@ -50,15 +49,10 @@
     background:royalblue;
     color:white;
     border-radius: 6px;
-    border: none;
     width: 95px;
     height: 50px;
     margin-right: 5px;
-    font-size: 20px;
-}
-
-.searchbar button:hover{
-    opacity: 0.8;
+    font-size: 25px;
 }
 
 .home-page-app{
@@ -79,7 +73,6 @@
 .image-div img{
     padding-top: 30px;
     width: 90%;
-    box-sizing: content-box;
 }
 
 .image-text{
@@ -120,115 +113,4 @@
 .qr-icons img{
     margin-left: 50px;
     height: 40px;
-}
-
-.home-page-bot{
-    padding-top: 100px;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    background: black;
-}
-
-.dodots{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.dots{
-    width: 74%;
-    height: 90%;
-    display: flex;
-    justify-content: center;
-    color: white;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-    background-image: url("./img/dots.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 150px -250px;
-}
-
-.dots h1{
-    width: 70%;
-    font-size: 60px;
-    opacity: 100%;
-}
-
-.dots h2{
-    font-size: 18px;
-}
-
-.dots button {
-    background: royalblue;
-    border-radius: 6px;
-    color: white;
-    border: none;
-    height: 40px;
-    width: 100px;
-}
-
-.dots button:hover{
-    opacity: 0.8;
-    transition: 0.3s;
-}
-
-.bot-menu{
-    color: white;
-    width: 50%;
-    display: grid;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.bot-menu-element{
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-}
-
-.bot-menu-element img{
-    height: 200px;
-    width: 300px;
-    border-radius: 34% 66% 49% 51% / 51% 48% 52% 49% ;
-    transition: 0.4s;
-}
-
-.bot-menu-element img:hover{
-    border: 5px solid royalblue;
-}
-
-.bot-menu-text{
-    flex-direction: column;
-    width: 50%;
-    padding-left: 15px;
-    padding-top: 10px;
-}
-
-.bot-menu-element h1{
-    font-size: 30px;
-}
-
-.bot-menu-element h2{
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.bot-menu-element button{
-    background: royalblue;
-    border-radius: 6px;
-    color: white;
-    border: none;
-    height: 40px;
-    width: 100px;
-}
-
-.bot-menu-element button:hover{
-    opacity: 0.8;
-    transition: 0.3s;
 }
