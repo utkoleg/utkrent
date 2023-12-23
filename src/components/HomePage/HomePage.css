@@ -3,9 +3,10 @@
     height: 350px;
 
     /*//image*/
-    background-image: url("img/apart2.jpg");
+    /*background-image: url("img/apart2.jpg");*/
+    background-image: url("img/orion.jpg");
     background-repeat: no-repeat;
-    background-position:0 -200px;
+    background-position:0 -150px;
     background-size: cover;
 
     display: flex;
@@ -53,7 +54,7 @@
     width: 95px;
     height: 50px;
     margin-right: 5px;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .searchbar button:hover{
@@ -178,5 +179,54 @@
 
 .bot-menu{
     color: white;
-    font-size: 50px;
+    width: 50%;
+    display: grid;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.bot-menu-element{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.bot-menu-element img{
+    height: 200px;
+    width: 300px;
+    border-radius: 34% 66% 49% 51% / 51% 48% 52% 49% ;
+    transition: 0.4s;
+}
+
+.bot-menu-element img:hover{
+    border: 5px solid royalblue;
+}
+
+.bot-menu-text{
+    flex-direction: column;
+    width: 50%;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.bot-menu-element h1{
+    font-size: 30px;
+}
+
+.bot-menu-element h2{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.bot-menu-element button{
+    background: royalblue;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    height: 40px;
+    width: 100px;
+}
+
+.bot-menu-element button:hover{
+    opacity: 0.8;
 }
