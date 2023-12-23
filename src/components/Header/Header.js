@@ -10,17 +10,17 @@ function Header() {
             </div>
             <div className="header-list">
                 <ul>
-                    <li><BiHeart/></li>
+                    <li className="list"><BiHeart/></li>
                     <li>|</li>
-                    <li>Living spaces</li>
+                    <li className="list">Living spaces</li>
                     <li>|</li>
-                    <li>Business solutions</li>
+                    <li className="list">Business solutions</li>
                     <li>|</li>
-                    <li>List of properties</li>
+                    <li className="list">List of properties</li>
                     <li>|</li>
-                    <li>Log in</li>
+                    <li className="list">Log in</li>
                     <li>|</li>
-                    <li>Sing up</li>
+                    <li className="list">Sing up</li>
                 </ul>
             </div>
         </div>

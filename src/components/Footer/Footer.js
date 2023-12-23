@@ -50,11 +50,11 @@ function Footer() {
                                 <h6 className="text-uppercase font-weight-bold mb-4">Navigation</h6>
                                 <ul className="list-unstyled mb-0">
                                     <li className="mb-2"><a href="/" className="text-muted">Home</a></li>
-                                    <li className="mb-2"><a href="/about" className="text-muted">About utkomanager</a>
+                                    <li className="mb-2"><a href="/" className="text-muted">Living spaces</a>
                                     </li>
-                                    <li className="mb-2"><a href="/contacts" className="text-muted">Out investors</a>
+                                    <li className="mb-2"><a href="/" className="text-muted">Business solutions</a>
                                     </li>
-                                    <li className="mb-2"><a href="/feedback" className="text-muted">Contact us</a></li>
+                                    <li className="mb-2"><a href="/" className="text-muted">List of properties</a></li>
                                 </ul>
                             </div>
                             <div className="col-lg-2 col-md-6 mb-4 mb-lg-0">
