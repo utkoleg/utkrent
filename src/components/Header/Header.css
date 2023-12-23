@@ -1,0 +1,22 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    height: 80px;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header-list ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+    height: 60%;
+    font-size: 17px;
+    font-weight: bold;
+}
+
