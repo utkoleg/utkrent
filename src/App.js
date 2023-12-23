@@ -1,30 +1,25 @@
+import logo from './logo.svg';
 import './App.css';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import HomePage from "./components/HomePage/HomePage";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import React from "react";
-import AddImgModal from './components/AddImgModal/AddImgModal';
 
 function App() {
-    const [selectedCard, setSelectedCard] = React.useState(null)
-  
-  const closePopup = () => {
-    setSelectedCard(null)
-  }
-    return (
-        <div className="App">
-            <Header/>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<HomePage/>}></Route>
-                    <Route path="/login" element={<AddImgModal />}/>
-                </Routes>
-            </Router>
-            <HomePage/>
-            <Footer/>
-        </div>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
 export default App;
