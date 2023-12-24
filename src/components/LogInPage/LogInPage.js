@@ -20,6 +20,7 @@ const LogInPage = () => {
                     <input placeholder="Email address"/>
                     <div className="password-input">
                         <input
+                            placeholder="Password"
                             type={
                                 showPassword ? "text" : "password"
                             }
