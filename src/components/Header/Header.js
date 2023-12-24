@@ -1,6 +1,7 @@
 import React from 'react';
 import {BiHeart} from "react-icons/bi";
 import "./Header.css"
+import {Link} from "react-router-dom";
 
 function Header() {
     return (

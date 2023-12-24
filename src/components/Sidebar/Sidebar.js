@@ -38,6 +38,7 @@ function Sidebar() {
         }
     ]
     return (
+        <div className="containerr">
             <div style={{width: isOpen ? "200px" : "0"}} className="sidebar">
                 <div className="top_section">
                     <div style={{marginLeft: isOpen ? "150px" : "0px"}} className="bars">
@@ -53,6 +54,7 @@ function Sidebar() {
                     ))
                 }
             </div>
+        </div>
     );
 }
 

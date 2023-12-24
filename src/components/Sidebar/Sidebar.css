@@ -2,7 +2,11 @@
     display:flex;
     position: absolute;
     width: 100%;
+    height: 100%;
     margin: 0 auto;
+}
+main{
+    width: 100%;
 }
 .sidebar{
     background: #000;
@@ -10,9 +14,6 @@
     height: 100vh;
     width: 200px;
     transition: all 0.25s;
-    position: fixed;
-    z-index: 3;
-    top: 0;
 }
 
 .top_section{
