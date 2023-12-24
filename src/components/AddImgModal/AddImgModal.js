@@ -1,17 +1,10 @@
 import React from 'react'
 import './AddImgModal.css'
 
-const typeOfs = [
-    "nature",
-    "cars"
-]
-
 export const AddImgModal = ({isActive, closeModal, addCallback}, props) => {
     const [link, setLink] = React.useState()
-    const [typeOf, setTypeOf] = React.useState(0)
-    const [title, setTitle] = React.useState()
     const onClose = props
-    
+
     if(!isActive){
         <></>
     }
@@ -21,17 +14,17 @@ export const AddImgModal = ({isActive, closeModal, addCallback}, props) => {
         <div class="log-in-modal">
             <div class="log-in-popup">
                 <div class="log-in-p">Log In</div>
-            <form className='add-img-modal__form'>
-                <div>
-                    <input placeholder='Email' type="email" value={link} onChange={(target) => setLink(target.value)}/>
-                </div>
-                <div>
-                    <input placeholder='Password' type="password" value={link} onChange={(target) => setLink(target.value)}/>
-                </div>
-                <div>
-                    <button>Log In</button>
-                </div>
-            </form>
+                <form className='add-img-modal__form'>
+                    <div>
+                        <input placeholder='Email' type="email" value={link} onChange={(target) => setLink(target.value)}/>
+                    </div>
+                    <div>
+                        <input placeholder='Password' type="password" value={link} onChange={(target) => setLink(target.value)}/>
+                    </div>
+                    <div>
+                        <button>Log In</button>
+                    </div>
+                </form>
                 <a className="password-forgot">Forgot Password?</a>
                 <hr style={{
                     backgroundColor: 'black',
@@ -40,7 +33,7 @@ export const AddImgModal = ({isActive, closeModal, addCallback}, props) => {
                     borderColor: 'black',
                     color: 'black'
                 }}/>
-                <div>Don't have an account? 
+                <div>Don't have an account?
                     <a class="signup"> Sign Up</a>
                 </div>
             </div>

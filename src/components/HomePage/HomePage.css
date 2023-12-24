@@ -147,7 +147,6 @@
     color: white;
     flex-direction: column;
     overflow: hidden;
-    position: relative;
     background-image: url("./img/dots.png");
     background-size: cover;
     background-repeat: no-repeat;
