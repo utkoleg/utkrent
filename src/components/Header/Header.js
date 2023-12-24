@@ -7,7 +7,7 @@ function Header() {
     return (
         <div className="header">
             <div className="header-logo">
-                <h1>[utk]rent.</h1>
+                <h1><a href="/">[utk]rent.</a></h1>
             </div>
             <div className="header-list">
                 <ul>
@@ -19,7 +19,7 @@ function Header() {
                     <li>|</li>
                     <li className="list">List of properties</li>
                     <li>|</li>
-                    <li className="list">Log in</li>
+                    <li className="list"><a className="list" href="/login">Log in</a></li>
                     <li>|</li>
                     <li className="list">Sing up</li>
                 </ul>
