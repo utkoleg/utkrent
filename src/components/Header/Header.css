@@ -7,6 +7,13 @@
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header-logo{
+    padding-left: 40px;
 }
 
 .header-list ul{
