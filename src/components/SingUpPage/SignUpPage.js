@@ -5,18 +5,35 @@ import Google from "../LogInPage/img/google_logo.png";
 import Facebook from "../LogInPage/img/facebook_logo.png";
 import Vk from "../LogInPage/img/vk_logo.png";
 import "./SignUpPage.css"
+import UserService from "../Services/UserService";
 
-function SignUpPage(props) {
+function SignUpPage() {
+    const [user, setUser] = useState(null)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState('');
 
-
+    // PASSWORD MISMATCH CHECK
     const [showPassword, setShowPassword] = useState(false);
     const [isMatch, setIsMatch] = useState(true)
 
 
+    // VARIABLE HANDLERS
+    const handleNameChange = (e) => {
+        setName(e.target.value);
+        updateUser();
+    };
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        updateUser();
+    };
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+        updateUser();
+    };
 
     const handleConfirmPasswordChange = (e) => {
         const value = e.target.value;
@@ -24,7 +41,27 @@ function SignUpPage(props) {
         setIsMatch(value === password);
     };
 
+    const updateUser = () => {
+        if(name !== '' && email !== '' && password !== '' && confirmPassword !== '' && isMatch){
+            setUser({
+                name: name,
+                email: email,
+                password: password
+            });
+        } else{
+            setUser(null);
+        }
+    };
+
     const isButtonActive = password !== '' && confirmPassword !== '' && isMatch;
+
+    const signUpUser = () => {
+            UserService.userSignUp(user).then((response) => {
+                console.log(response.data)
+            }).catch(error => {
+                console.log(error)
+            })
+    }
 
     return (
         <div className="sign-up-div">
