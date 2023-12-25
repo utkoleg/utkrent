@@ -51,7 +51,7 @@ function SignUpPage() {
             setUser({
                 username: username,
                 email: email,
-                password: password,
+                password: password
             });
             console.log('User updated:', user);
         } else {

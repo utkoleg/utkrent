@@ -7,6 +7,10 @@ class UserService{
     userSignUp(user){
         return axios.post(USER_BASE_REST_API_URL + "/sign-up", user)
     }
+
+    userLogIn(user){
+        return axios.post(USER_BASE_REST_API_URL + "/login", user)
+    }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

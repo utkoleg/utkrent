@@ -5,10 +5,49 @@ import Facebook from "./img/facebook_logo.png"
 import Google from "./img/google_logo.png"
 import Vk from "./img/vk_logo.png"
 import {RiEyeCloseLine, RiEyeFill} from "react-icons/ri";
+import UserService from "../Services/UserService";
 
 const LogInPage = () => {
+    const [user, setUser] = useState(null)
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const isButtonActive = password !== '' && email !== '';
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        updateUser();
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value);
+        updateUser();
+    }
+
+    const updateUser = () => {
+        if(email !== '' && password !== ''){
+            setUser({
+                email:email,
+                password:password
+            });
+            console.log('User updated:', user);
+        } else {
+            setUser(null)
+        }
+    }
+
+    const logInUser = () => {
+        console.log(user)
+        UserService.userLogIn(user)
+            .then((response) => {
+                console.log(response.data);
+                //navigate('/login');
+            })
+            .catch((error) => {
+                console.error('Error during sign-up:', error);
+            })
+    };
+
     return (
         <div className="log-in-div">
             <div className="log-in-window">
@@ -17,27 +56,32 @@ const LogInPage = () => {
                     <h2>New to [utk]rent? <a href="/sign-up" style={{color:"royalblue"}}>Sing-up here!</a></h2>
                 </div>
                 <div className="log-in-window-input">
-                    <input placeholder="Email address"/>
+                    <input placeholder="Email address"
+                    type="email"
+                    value={email}
+                    onChange={handleEmailChange}/>
                     <div className="password-input">
                         <input
                             placeholder="Password"
-                            type={
-                                showPassword ? "text" : "password"
-                            }
+                            type={showPassword ? "text" : "password"}
                             value={password}
-                            onChange={(e) =>
-                                setPassword(e.target.value)
-                            }
+                            onChange={handlePasswordChange}
                         />
 
-                        <button style={{color:"black", background:"none"}} value={showPassword} onClick={() => setShowPassword((prev) => !prev)}>
+                        <button style={{color:"black", background:"none"}} value={showPassword}
+                                onClick={() => setShowPassword((prev) => !prev)}>
                             {
                                 showPassword ? <RiEyeFill /> : <RiEyeCloseLine />
                             }
                         </button>
                     </div>
                     <h6>Forgot password?</h6>
-                    <button className="log-btn">Log in</button>
+                    <button className="log-btn"
+                            disabled={!isButtonActive}
+                            style={{opacity: isButtonActive ? "1" : "0.5"}}
+                            onClick={logInUser}
+                            >Log in
+                    </button>
                 </div>
                 <hr style={{width: "85%", margin: "0 auto", marginTop: "20px"}}></hr>
                 <div className="log-in-window-btn">
