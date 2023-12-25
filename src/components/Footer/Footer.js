@@ -15,7 +15,7 @@ function Footer() {
                                 <p className="lead mb-0">Find your dream apartment</p>
                                 <p className="lead">made by <a href="https://www.instagram.com/utkoleg/"
                                                                className="text-white">
-                                    <u>utkoleg</u></a>
+                                    <u>utkoleg and peacedauren</u></a>
                                 </p>
                             </div>
                         </div>
