@@ -8,7 +8,6 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    background: white;
     background-image: url("/src/components/HomePage/img/apart2.jpg");
     background-size: cover;
 
@@ -48,6 +47,10 @@
     border: 2px inset gray;
 }
 
+.log-in-window input:focus{
+    outline: none;
+}
+
 .password-input{
     margin-top: 15px;
     width: 100%;
@@ -73,10 +76,11 @@
     border: none;
 }
 
-.log-in-window-input h7{
+.log-in-window-input h6{
     text-align: left;
     font-size: 13px;
     color: royalblue;
+    font-weight: 400;
 }
 
 .log-btn{
