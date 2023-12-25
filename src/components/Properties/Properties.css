@@ -1,0 +1,113 @@
+.prop-content {
+    margin-top: 120px;
+    flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.properties-section {
+    margin-bottom: 40px;
+}
+
+.properties-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px 30px;
+    padding: 0;
+    margin: 60px auto 0;
+    list-style: none;
+}
+
+.properties-heading {
+    text-align: center;
+}
+
+.properties-card {
+    border-radius: 6px;
+    padding: 0;
+    width: 316px;
+    height: 400px;
+    background-color: white;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.prop-image {
+    width: 100%;
+    height: 55%;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.prop-info {
+    margin: 5px 10px 0 10px;
+}
+
+.prop-info-price {
+    font-size: 20px;
+}
+
+.prop-info-title {
+    font-size: 13px;
+}
+
+.prop-about-info {
+    font-size: 13px;
+    color: rgb(195, 192, 192);
+}
+
+.prop-contacts {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.prop-contacts button {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 145px;
+    font-size: 13px;
+}
+
+.prop-contacts a {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 145px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.addToFavourites {
+    border: 2px solid royalblue;
+    background-color: #fff;
+    border-radius: 6px;
+    height: 35px;
+    color: royalblue;
+    font-weight: 600;
+
+    transition: all .3s linear;
+}
+
+.addToFavourites:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.prop-number {
+    border: 2px solid royalblue;
+    background-color: royalblue;
+    border-radius: 6px;
+    height: 35px;
+    color: white;
+    font-weight: 600;
+
+    transition: all .3s linear;
+}
+
+.prop-number:hover {
+    background-color: white;
+    color: royalblue;
+}

@@ -18,6 +18,9 @@
     text-decoration: none;
 }
 
+.header-list{
+    padding-right: 40px;
+}
 .header-list ul{
     display: flex;
     justify-content: space-between;
@@ -38,4 +41,41 @@
     text-decoration: underline;
     color: royalblue;
     transition: 0.2s;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    min-width: 100px;
+    display: none;
+    width: 100%;
+    position: absolute;
+    background: royalblue;
+    text-align: center;
+    font-weight: 500;
+}
+
+.dropdown-content button{
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding:10px 0;
+}
+
+.dropdown-content a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

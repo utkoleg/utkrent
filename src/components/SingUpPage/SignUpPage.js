@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { RiEyeCloseLine, RiEyeFill } from 'react-icons/ri';
+import React, {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
+import {RiEyeCloseLine, RiEyeFill} from 'react-icons/ri';
 import Apple from '../LogInPage/img/apple_logo.png';
 import Google from '../LogInPage/img/google_logo.png';
 import Facebook from '../LogInPage/img/facebook_logo.png';
@@ -47,22 +47,26 @@ function SignUpPage() {
     };
 
     const updateUser = () => {
-        if (username !== '' && email !== '' && password !== '') {
-            setUser({
-                username: username,
-                email: email,
-                password: password
-            });
-            console.log('User updated:', user);
-        } else {
-            setUser(null);
-        }
+        setUser((prevUser) => ({
+            ...prevUser,
+            username: username,
+            email: email,
+            password: password
+        }));
     };
 
+    useEffect(() => {
+        console.log('User updated:', user);
+    }, [user]);
+
+    useEffect(() => {
+        updateUser()
+    }, [username, email, password]);
+
     const isButtonActive = password !== '' && confirmPassword !== '' && isMatch && username !== '' && email !== '';
+    const [error, setError] = useState("")
 
     const signUpUser = () => {
-        setLoading(true);
         console.log(user);
         UserService.userSignUp(user)
             .then((response) => {
@@ -72,10 +76,8 @@ function SignUpPage() {
             })
             .catch((error) => {
                 console.error('Error during sign-up:', error);
+                setError(error.response.data.errorDescription || 'An error occurred during sign-up.');
             })
-            .finally(() => {
-                setLoading(false);
-            });
     };
 
     return (
@@ -85,7 +87,7 @@ function SignUpPage() {
                     <h1>Sign up</h1>
                     <h2>
                         Already have an account?{' '}
-                        <a href="/login" style={{ color: 'royalblue' }}>
+                        <a href="/login" style={{color: 'royalblue'}}>
                             Log-in here!
                         </a>
                     </h2>
@@ -112,11 +114,11 @@ function SignUpPage() {
                         />
 
                         <button
-                            style={{ color: 'black', background: 'none' }}
+                            style={{color: 'black', background: 'none'}}
                             value={showPassword}
                             onClick={() => setShowPassword((prev) => !prev)}
                         >
-                            {showPassword ? <RiEyeFill /> : <RiEyeCloseLine />}
+                            {showPassword ? <RiEyeFill/> : <RiEyeCloseLine/>}
                         </button>
 
                         <input
@@ -127,32 +129,33 @@ function SignUpPage() {
                         />
                     </div>
                     {!isMatch && (
-                        <p style={{ color: 'red', fontSize: '14px', margin: '5px 0' }}>
+                        <p style={{color: 'red', fontSize: '14px', margin: '5px 0'}}>
                             Passwords do not match
                         </p>
                     )}
+                    {error && <div style={{color: 'red', fontSize: '14px', margin: '5px 0'}}>{error}</div>}
                     <button
                         className="sign-btn"
                         disabled={!isButtonActive || loading}
                         onClick={signUpUser}
-                        style={{ opacity: isButtonActive ? '1' : '0.5' }}
+                        style={{opacity: isButtonActive ? '1' : '0.5'}}
                     >
                         Sign up
                     </button>
                 </div>
-                <hr style={{ width: '85%', margin: '0 auto', marginTop: '20px' }}></hr>
+                <hr style={{width: '85%', margin: '0 auto', marginTop: '20px'}}></hr>
                 <div className="sign-up-window-btn">
                     <div className="apple-div">
-                        <img src={Apple} alt="1" />
+                        <img src={Apple} alt="1"/>
                     </div>
                     <div className="google-div">
-                        <img src={Google} alt="1" />
+                        <img src={Google} alt="1"/>
                     </div>
                     <div className="facebook-div">
-                        <img src={Facebook} alt="1" />
+                        <img src={Facebook} alt="1"/>
                     </div>
                     <div className="vk-div">
-                        <img src={Vk} alt="1" />
+                        <img src={Vk} alt="1"/>
                     </div>
                 </div>
             </div>

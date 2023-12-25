@@ -6,47 +6,68 @@ import Google from "./img/google_logo.png"
 import Vk from "./img/vk_logo.png"
 import {RiEyeCloseLine, RiEyeFill} from "react-icons/ri";
 import UserService from "../Services/UserService";
+import LocalStorageService from "../Services/LocalStorageService";
+import { useNavigate } from 'react-router-dom';
+import {useAuth} from "../js/AuthContext";
 
 const LogInPage = () => {
     const [user, setUser] = useState(null)
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const isButtonActive = password !== '' && email !== '';
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-        updateUser();
-    }
+    const navigate = useNavigate();
+    const {login} = useAuth();
+    const [error, setError] = useState('')
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
         updateUser();
     }
 
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        updateUser();
+    }
+
     const updateUser = () => {
         if(email !== '' && password !== ''){
             setUser({
-                email:email,
-                password:password
+                email: email,
+                password: password
             });
             console.log('User updated:', user);
         } else {
-            setUser(null)
+            setUser(null);
         }
     }
 
-    const logInUser = () => {
-        console.log(user)
-        UserService.userLogIn(user)
-            .then((response) => {
-                console.log(response.data);
-                //navigate('/login');
-            })
-            .catch((error) => {
-                console.error('Error during sign-up:', error);
-            })
-    };
+    // const logInUser = () => {
+    //     console.log(user)
+    //     UserService.userLogIn(user)
+    //         .then((response) => {
+    //             console.log(response.data);
+    //             //navigate('/login');
+    //         })
+    //         .catch((error) => {
+    //             console.error('Error during sign-up:', error);
+    //         })
+    // };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const data = {email, password};
+        try {
+            await UserService.login(data).then(res => {
+                if (LocalStorageService.get("access_token") != null) {
+                    login();
+                    navigate("/");
+                }})
+        } catch (error) {
+            setError(error.message);
+        }
+    }
 
     return (
         <div className="log-in-div">
@@ -56,7 +77,7 @@ const LogInPage = () => {
                     <h2>New to [utk]rent? <a href="/sign-up" style={{color:"royalblue"}}>Sing-up here!</a></h2>
                 </div>
                 <div className="log-in-window-input">
-                    <input placeholder="Email address"
+                    <input placeholder="Email"
                     type="email"
                     value={email}
                     onChange={handleEmailChange}/>
@@ -76,10 +97,11 @@ const LogInPage = () => {
                         </button>
                     </div>
                     <h6>Forgot password?</h6>
+                    {error && <div style={{ color: 'red', fontSize: '14px', margin: '5px 0' }}>{error}</div>}
                     <button className="log-btn"
                             disabled={!isButtonActive}
                             style={{opacity: isButtonActive ? "1" : "0.5"}}
-                            onClick={logInUser}
+                            onClick={(e) => handleSubmit(e)}
                             >Log in
                     </button>
                 </div>
