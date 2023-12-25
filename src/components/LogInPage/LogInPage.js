@@ -36,7 +36,7 @@ const LogInPage = () => {
                             }
                         </button>
                     </div>
-                    <h7>Forgot password?</h7>
+                    <h6>Forgot password?</h6>
                     <button className="log-btn">Log in</button>
                 </div>
                 <hr style={{width: "85%", margin: "0 auto", marginTop: "20px"}}></hr>
