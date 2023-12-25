@@ -14,7 +14,7 @@ const LogInPage = () => {
             <div className="log-in-window">
                 <div className="log-in-window-text">
                     <h1>Log in</h1>
-                    <h2>Log-in using email address</h2>
+                    <h2>New to [utk]rent? <a href="/sign-up" style={{color:"royalblue"}}>Sing-up here!</a></h2>
                 </div>
                 <div className="log-in-window-input">
                     <input placeholder="Email address"/>

@@ -5,6 +5,7 @@ import HomePage from "./components/HomePage/HomePage";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import React from "react";
 import LogInPage from "./components/LogInPage/LogInPage";
+import SignUpPage from "./components/SingUpPage/SignUpPage";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<HomePage/>}></Route>
                     <Route path="/login" element={<LogInPage />}/>
+                    <Route path="/sign-up" element={<SignUpPage />}/>
                 </Routes>
             </Router>
             <Footer/>

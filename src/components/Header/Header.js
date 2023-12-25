@@ -21,7 +21,7 @@ function Header() {
                     <li>|</li>
                     <li className="list"><a className="list" href="/login">Log in</a></li>
                     <li>|</li>
-                    <li className="list">Sing up</li>
+                    <li className="list"><a className="list" href="/sign-up"> Sing up</a></li>
                 </ul>
             </div>
         </div>

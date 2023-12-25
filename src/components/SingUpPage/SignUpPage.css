@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500&family=Kanit&family=Playfair+Display&family=Poppins:wght@300;400;500&display=swap');
+
+.sign-up-div{
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-image: url("/src/components/HomePage/img/apart2.jpg");
+    background-size: cover;
+
+}
+
+.sign-up-window{
+    width: 50%;
+    height: 75%;
+    flex-direction: column;
+    background: white;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    border-radius: 6px;
+    box-shadow: 0 0 5px black;
+}
+
+.sign-up-window-text{
+    padding-bottom: 40px;
+}
+.sign-up-window-text h2{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.sign-up-window-input{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.sign-up-window-input input{
+    border-radius: 6px;
+    height: 50px;
+    border: 2px inset gray;
+}
+
+.sign-up-window input:focus{
+    outline: none;
+}
+
+.password-input{
+    margin-top: 15px;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    display: flex;
+    background: white;
+    border-radius: 6px;
+    align-items: center;
+    align-content: center;
+    border: 2px inset gray;
+}
+
+.password-input input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 6px;
+}
+
+.password-input button{
+    font-size: 20px;
+    border: none;
+}
+
+.sign-up-window-input h6{
+    text-align: left;
+    font-size: 13px;
+    color: royalblue;
+    font-weight: 400;
+}
+
+.sign-btn{
+    background: royalblue;
+    border-radius: 6px;
+    margin-top: 30px;
+    border: none;
+    color: white;
+    height: 40px;
+    transition: 0.3s;
+}
+
+.sign-up-window-input button:hover{
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.sign-up-window-btn{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin: 20px auto 0;
+}
+
+.apple-div, .google-div, .facebook-div, .vk-div{
+    width: 20%;
+    border-radius: 6px;
+}
+
+.apple-div:hover, .google-div:hover, .facebook-div:hover, .vk-div:hover{
+    opacity: 0.8;
+}
+
+.apple-div{
+    display: flex;
+    background: black;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.apple-div img{
+    zoom: 70%;
+}
+
+.google-div{
+    background: #eeeeee;
+}
+
+.facebook-div{
+    background: #1976d2;
+}
+
+.vk-div{
+    background: #2787f5;
+}
+.sign-up-window-btn img{
+    height: 55px;
+}
