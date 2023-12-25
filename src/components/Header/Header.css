@@ -12,8 +12,10 @@
     width: 100%;
 }
 
-.header-logo{
+.header-logo a{
     padding-left: 40px;
+    color: white;
+    text-decoration: none;
 }
 
 .header-list ul{
@@ -26,8 +28,14 @@
     font-size: 17px;
     font-weight: bold;
 }
+
+.header-list ul a {
+    color: white;
+    text-decoration: none;
+}
+
 .list:hover{
     text-decoration: underline;
     color: royalblue;
+    transition: 0.2s;
 }
-

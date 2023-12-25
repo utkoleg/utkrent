@@ -1,19 +1,13 @@
 import axios from "axios";
 
-const USER_BASE_REST_API_URL = "http://localhost:8080/utkorent";
+const USER_BASE_REST_API_URL = "http://localhost:8080/utkrent";
 
 class UserService{
 
     userSignUp(user){
-        return axios.post(USER_BASE_REST_API_URL + '/' + "sign-up", user)
+        return axios.post(USER_BASE_REST_API_URL + "/sign-up", user)
     }
-
-    // userAddRole(id, roleName){
-    //     return axios.post(USER_BASE_REST_API_URL + '/' + "add-role-to-user", id, roleName)
-    // }
-
-
-
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default new UserService();
