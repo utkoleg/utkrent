@@ -4,7 +4,6 @@ import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import React from "react";
-import AddImgModal from './components/AddImgModal/AddImgModal';
 import LogInPage from "./components/LogInPage/LogInPage";
 
 function App() {

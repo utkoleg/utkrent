@@ -4,7 +4,7 @@ import Apple from "./img/apple_logo.png"
 import Facebook from "./img/facebook_logo.png"
 import Google from "./img/google_logo.png"
 import Vk from "./img/vk_logo.png"
-import {FaEyeSlash, FaRegEye} from "react-icons/fa";
+import {RiEyeCloseLine, RiEyeFill} from "react-icons/ri";
 
 const LogInPage = () => {
     const [password, setPassword] = useState("");
@@ -14,7 +14,7 @@ const LogInPage = () => {
             <div className="log-in-window">
                 <div className="log-in-window-text">
                     <h1>Log in</h1>
-                    <h2>Log in using email address</h2>
+                    <h2>Log-in using email address</h2>
                 </div>
                 <div className="log-in-window-input">
                     <input placeholder="Email address"/>
@@ -32,7 +32,7 @@ const LogInPage = () => {
 
                         <button style={{color:"black", background:"none"}} value={showPassword} onClick={() => setShowPassword((prev) => !prev)}>
                             {
-                                showPassword ? <FaEyeSlash/> : <FaRegEye/>
+                                showPassword ? <RiEyeFill /> : <RiEyeCloseLine />
                             }
                         </button>
                     </div>
