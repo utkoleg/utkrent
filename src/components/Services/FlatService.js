@@ -12,13 +12,18 @@ class FlatService{
         formData.append('price', price);
         formData.append('image', image);
 
-        axios.post(FLAT_BASE_REST_API_URL + "/add-flat", formData)
+        axios.post(FLAT_BASE_REST_API_URL + "/add-flat", formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        })
             .then(response => {
                 console.log('Upload success:', response.data);
             })
             .catch(error => {
                 console.error('Upload error:', error);
             });
+
     }
     getFlats(){
         return axios.get(FLAT_BASE_REST_API_URL);
