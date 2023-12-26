@@ -37,6 +37,33 @@ class UserService{
     static logout() {
         LocalStorageService.clear("user");
     }
+
+    likeFlat(username, flatId){
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("flatId", flatId);
+        return axios.post(USER_BASE_REST_API_URL + "/addFlatToUser", formData);
+    }
+
+    unlikeFlat(username, flatId) {
+        const formData = new FormData();
+        formData.append("username", username);
+        formData.append("flatId", flatId);
+
+        return axios.post(USER_BASE_REST_API_URL + "/removeFlatFromUser", formData);
+    }
+
+    getLikedFlats(username) {
+        const token = LocalStorageService.get("access_token");
+
+        return axios.get(`${USER_BASE_REST_API_URL}/liked-flats/${username}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+    }
+
+
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export

@@ -11,6 +11,7 @@ import AddFlatPage from "./components/AddFlatPage/AddFlatPage";
 import LocalStorageService, {USER_INFO_KEY} from "./components/Services/LocalStorageService";
 import {useAuth} from "./components/js/AuthContext";
 import AccessDenied from "./components/AccessDenied/AccessDenied";
+import Favorites from "./components/Fauvorites/Fauvorites";
 
 function App() {
 
@@ -42,6 +43,7 @@ function App() {
                     <Route path="/login" element={<LogInPage/>}/>
                     <Route path="/sign-up" element={<SignUpPage/>}/>
                     <Route path="/properties" element={<Properties/>}/>
+                    <Route path="/favourites" element={<Favorites/>}/>
                     {isAdmin ? (
                         <Route path="/add-flat" element={<AddFlatPage/>}/>
                     ) : (

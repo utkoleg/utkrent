@@ -65,7 +65,7 @@ function Header() {
                                     {showDropdown ? <IoIosArrowUp/> : <IoIosArrowDown/>}
                                     {username}
                                     <div className="dropdown-content">
-                                        <a href="/"><BiHeart/>Favourites</a>
+                                        <a href="/favourites"><BiHeart/>Favourites</a>
                                         <button onClick={handleLogout}
                                                 style={{
                                                     display: showDropdown ? "inline-block" : "none",
