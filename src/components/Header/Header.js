@@ -5,12 +5,20 @@ import {useAuth} from '../js/AuthContext';
 import LocalStorageService, {USER_INFO_KEY} from '../Services/LocalStorageService';
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
 import {MdLogout} from "react-icons/md";
+import {IoAddCircleOutline} from "react-icons/io5";
 
 function Header() {
     const {isAuthenticated, logout} = useAuth();
     const [user, setUser] = useState(JSON.parse(LocalStorageService.get(USER_INFO_KEY)));
     const [username, setUsername] = useState();
     const [showDropdown, setShowDropdown] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        if (username === "admin") {
+            setIsAdmin(true)
+        }
+    }, [username]);
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -19,6 +27,7 @@ function Header() {
             setUsername(storedUser?.username);
         }
     }, [isAuthenticated]);
+
 
     const handleLogout = () => {
         logout();
@@ -47,9 +56,13 @@ function Header() {
                         <>
                             <li className="list">
                                 <div className="dropdown"
-                                     onMouseEnter={() => {setShowDropdown(true)}}
-                                     onMouseLeave={() => {setShowDropdown(false)}}>
-                                    {showDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                     onMouseEnter={() => {
+                                         setShowDropdown(true)
+                                     }}
+                                     onMouseLeave={() => {
+                                         setShowDropdown(false)
+                                     }}>
+                                    {showDropdown ? <IoIosArrowUp/> : <IoIosArrowDown/>}
                                     {username}
                                     <div className="dropdown-content">
                                         <a href="/"><BiHeart/>Favourites</a>
@@ -57,8 +70,14 @@ function Header() {
                                                 style={{
                                                     display: showDropdown ? "inline-block" : "none",
                                                     width: "100%", color: "white"
-                                                }}><MdLogout />Logout
+                                                }}><MdLogout/>Logout
                                         </button>
+                                        {isAdmin &&
+                                            <a href="/add-flat"
+                                                style={{
+                                                    color: "white",
+                                                    width:"100%"
+                                                }}><IoAddCircleOutline/>Add flat</a>}
                                     </div>
                                 </div>
                             </li>
