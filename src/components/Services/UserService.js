@@ -42,30 +42,36 @@ class UserService{
         LocalStorageService.clearAll();
     }
 
-    likeFlat(username, flatId){
-        const formData = new FormData();
-        formData.append("username", username);
-        formData.append("flatId", flatId);
-        return axios.post(USER_BASE_REST_API_URL + "/addFlatToUser", formData);
+    // UserService.js
+
+    likeFlat(userId, flatId) {
+        return axios.post(USER_BASE_REST_API_URL + "/addFlatToUser", null, {
+            params: {
+                userId: userId,
+                flatId: flatId
+            }
+        });
     }
 
-    unlikeFlat(username, flatId) {
-        const formData = new FormData();
-        formData.append("username", username);
-        formData.append("flatId", flatId);
-
-        return axios.post(USER_BASE_REST_API_URL + "/removeFlatFromUser", formData);
+    unlikeFlat(userId, flatId) {
+        return axios.post(USER_BASE_REST_API_URL + "/removeFlatFromUser", null, {
+            params: {
+                userId: userId,
+                flatId: flatId
+            }
+        });
     }
 
-    getLikedFlats(username) {
+    getLikedFlats(userId) {
         const token = LocalStorageService.get(ACCESS_TOKEN_KEY);
 
-        return axios.get(`${USER_BASE_REST_API_URL}/liked-flats/${username}`, {
+        return axios.get(`${USER_BASE_REST_API_URL}/liked-flats/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         });
     }
+
 
 
 }

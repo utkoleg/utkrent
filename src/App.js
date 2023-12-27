@@ -11,7 +11,7 @@ import AddFlatPage from "./components/AddFlatPage/AddFlatPage";
 import LocalStorageService, {USER_INFO_KEY} from "./components/Services/LocalStorageService";
 import {useAuth} from "./components/js/AuthContext";
 import AccessDenied from "./components/AccessDenied/AccessDenied";
-import Favorites from "./components/Fauvorites/Fauvorites";
+import Favorites from "./components/Fauvorites/Favorites";
 
 function App() {
 

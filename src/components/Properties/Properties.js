@@ -18,27 +18,29 @@ function Properties() {
 
     const {isAuthenticated} = useAuth();
     const [user, setUser] = useState(null);
-    const [username, setUsername] = useState('');
+    const [id, setId] = useState(null);
     const [likedFlats, setLikedFlats] = useState([]);
     const [sortedFlats, setSortedFlats] = useState([]);
-
+    const [username, setUsername] = useState('')
     const [sortOrder, setSortOrder] = useState('none');
 
     useEffect(() => {
         if (isAuthenticated) {
             const storedUser = JSON.parse(localStorage.getItem('user'));
             setUser(storedUser);
-            setUsername(storedUser?.username);
+            setId(storedUser?.id);
+            setUser(storedUser?.username)
+
 
             // Fetch liked flats for the user
-            UserService.getLikedFlats(username)
+            UserService.getLikedFlats(id)
                 .then(response => {
                     const likedFlatIds = response.data.map(flat => flat.id);
                     setLikedFlats(likedFlatIds);
                 })
                 .catch(error => console.log(error));
         }
-    }, [isAuthenticated, username]);
+    }, [isAuthenticated, id]);
 
     useEffect(() => {
         getItems();
@@ -68,14 +70,14 @@ function Properties() {
         if (isAuthenticated) {
             if (likedFlats.includes(flatId)) {
                 // If already liked, remove from favorites
-                UserService.unlikeFlat(username, flatId)
+                UserService.unlikeFlat(id, flatId)
                     .then(() => {
                         setLikedFlats(prevLikedFlats => prevLikedFlats.filter(id => id !== flatId));
                     })
                     .catch(error => console.log(error));
             } else {
                 // If not liked, add to favorites
-                UserService.likeFlat(username, flatId)
+                UserService.likeFlat(id, flatId)
                     .then(() => {
                         setLikedFlats(prevLikedFlats => [...prevLikedFlats, flatId]);
                     })
@@ -139,16 +141,16 @@ function Properties() {
                     />
                 </div>
                 <button className="sort-button" onClick={toggleSortOrder}>
-                    {sortOrder === 'asc' && <PiSortAscendingBold />}
-                    {sortOrder === 'desc' && <PiSortDescendingBold />}
-                    {sortOrder === 'none' && <HiOutlineMenu />}
+                    {sortOrder === 'asc' && <PiSortAscendingBold/>}
+                    {sortOrder === 'desc' && <PiSortDescendingBold/>}
+                    {sortOrder === 'none' && <HiOutlineMenu/>}
                 </button>
             </div>
             <section className="properties properties-section">
                 <ul className="properties-list">
                     {sortedFlats.map(flat => (
                         <li className="properties-card" key={flat.id}>
-                        <img className="prop-image" src={flat.imageUrl} alt="asd"></img>
+                            <img className="prop-image" src={flat.imageUrl} alt="asd"></img>
                             <div className="prop-info">
                                 <div className="prop-main-info">
                                     <div className="prop-info-price">
