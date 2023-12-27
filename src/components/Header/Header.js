@@ -31,6 +31,7 @@ function Header() {
 
     const handleLogout = () => {
         logout();
+        window.location.href = "/"
     };
 
     return (
@@ -44,12 +45,8 @@ function Header() {
             </div>
             <div className="header-list">
                 <ul>
-                    <li className="list">Living spaces</li>
-                    <li>|</li>
-                    <li className="list">Business solutions</li>
-                    <li>|</li>
                     <li className="list">
-                        <a href="/properties"> List of properties</a>
+                        <a href="/properties"> See available apartments</a>
                     </li>
                     <li>|</li>
                     {isAuthenticated ? (

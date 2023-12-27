@@ -1,9 +1,12 @@
 import axios from "axios";
 import LocalStorageService, {ACCESS_TOKEN_KEY, USER_INFO_KEY} from "./LocalStorageService";
+import {useNavigate} from "react-router-dom";
 
 const USER_BASE_REST_API_URL = "http://localhost:8080/utkrent";
 
+
 class UserService{
+
 
     userSignUp(user){
         return axios.post(USER_BASE_REST_API_URL + "/sign-up", user)
@@ -34,8 +37,9 @@ class UserService{
             });
     }
 
+
     static logout() {
-        LocalStorageService.clear("user");
+        LocalStorageService.clearAll();
     }
 
     likeFlat(username, flatId){
@@ -54,7 +58,7 @@ class UserService{
     }
 
     getLikedFlats(username) {
-        const token = LocalStorageService.get("access_token");
+        const token = LocalStorageService.get(ACCESS_TOKEN_KEY);
 
         return axios.get(`${USER_BASE_REST_API_URL}/liked-flats/${username}`, {
             headers: {

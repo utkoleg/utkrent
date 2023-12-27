@@ -2,7 +2,7 @@ import './App.css';
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./components/HomePage/HomePage";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes, useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import LogInPage from "./components/LogInPage/LogInPage";
 import SignUpPage from "./components/SingUpPage/SignUpPage";

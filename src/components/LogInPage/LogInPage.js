@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./LogInPage.css"
 import Apple from "./img/apple_logo.png"
 import Facebook from "./img/facebook_logo.png"
@@ -7,7 +7,7 @@ import Vk from "./img/vk_logo.png"
 import {RiEyeCloseLine, RiEyeFill} from "react-icons/ri";
 import UserService from "../Services/UserService";
 import LocalStorageService from "../Services/LocalStorageService";
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {useAuth} from "../js/AuthContext";
 
 const LogInPage = () => {
@@ -21,41 +21,34 @@ const LogInPage = () => {
     const {login} = useAuth();
     const [error, setError] = useState('')
 
+    useEffect(() => {
+        updateUser()
+    }, [email,password]);
+
+    useEffect(() => {
+        console.log(user)
+    }, [user]);
+
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
-        updateUser();
+        updateUser()
     }
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
-        updateUser();
+        updateUser()
     }
 
     const updateUser = () => {
-        if(email !== '' && password !== ''){
-            setUser({
-                email: email,
-                password: password
-            });
-            console.log('User updated:', user);
-        } else {
-            setUser(null);
-        }
-    }
-
-    // const logInUser = () => {
-    //     console.log(user)
-    //     UserService.userLogIn(user)
-    //         .then((response) => {
-    //             console.log(response.data);
-    //             //navigate('/login');
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error during sign-up:', error);
-    //         })
-    // };
+        setUser((prevUser) => ({
+            ...prevUser,
+            email: email,
+            password: password
+        }));
+    };
 
     const handleSubmit = async (e) => {
+        updateUser()
         e.preventDefault();
         const data = {email, password};
         try {
@@ -63,7 +56,8 @@ const LogInPage = () => {
                 if (LocalStorageService.get("access_token") != null) {
                     login();
                     navigate("/");
-                }})
+                }
+            })
         } catch (error) {
             setError(error.message);
         }
@@ -74,13 +68,13 @@ const LogInPage = () => {
             <div className="log-in-window">
                 <div className="log-in-window-text">
                     <h1>Log in</h1>
-                    <h2>New to [utk]rent? <a href="/sign-up" style={{color:"royalblue"}}>Sing-up here!</a></h2>
+                    <h2>New to [utk]rent? <a href="/sign-up" style={{color: "royalblue"}}>Sing-up here!</a></h2>
                 </div>
                 <div className="log-in-window-input">
                     <input placeholder="Email"
-                    type="email"
-                    value={email}
-                    onChange={handleEmailChange}/>
+                           type="email"
+                           value={email}
+                           onChange={handleEmailChange}/>
                     <div className="password-input">
                         <input
                             placeholder="Password"
@@ -89,20 +83,20 @@ const LogInPage = () => {
                             onChange={handlePasswordChange}
                         />
 
-                        <button style={{color:"black", background:"none"}} value={showPassword}
+                        <button style={{color: "black", background: "none"}} value={showPassword}
                                 onClick={() => setShowPassword((prev) => !prev)}>
                             {
-                                showPassword ? <RiEyeFill /> : <RiEyeCloseLine />
+                                showPassword ? <RiEyeFill/> : <RiEyeCloseLine/>
                             }
                         </button>
                     </div>
                     <h6>Forgot password?</h6>
-                    {error && <div style={{ color: 'red', fontSize: '14px', margin: '5px 0' }}>{error}</div>}
+                    {error && <div style={{color: 'red', fontSize: '14px', margin: '5px 0'}}>{error}</div>}
                     <button className="log-btn"
                             disabled={!isButtonActive}
                             style={{opacity: isButtonActive ? "1" : "0.5"}}
                             onClick={(e) => handleSubmit(e)}
-                            >Log in
+                    >Log in
                     </button>
                 </div>
                 <hr style={{width: "85%", margin: "0 auto", marginTop: "20px"}}></hr>
