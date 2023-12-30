@@ -141,3 +141,33 @@
 .log-in-window-btn img{
     height: 55px;
 }
+
+@media (min-width: 320px) and (max-width: 500px) {
+
+    .log-in-window {
+        margin-top: 70px;
+        padding-top: 20px;
+        width: 270px;
+    }
+
+    .log-btn {
+        margin-top: 5px;
+    }
+
+    .log-in-window-btn {
+        margin-top: 10px;
+    }
+
+    .log-in-window-btn div {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .log-in-window-btn img {
+        width: 40%;
+        height: 40%;
+    }
+}

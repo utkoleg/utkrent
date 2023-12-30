@@ -46,7 +46,7 @@ function Header() {
             <div className="header-list">
                 <ul>
                     <li className="list">
-                        <a href="/properties"> See available apartments</a>
+                        <a className="list"  href="/properties"> See available apartments</a>
                     </li>
                     <li>|</li>
                     {isAuthenticated ? (

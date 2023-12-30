@@ -21,7 +21,6 @@ function Properties() {
     const [id, setId] = useState(null);
     const [likedFlats, setLikedFlats] = useState([]);
     const [sortedFlats, setSortedFlats] = useState([]);
-    const [username, setUsername] = useState('')
     const [sortOrder, setSortOrder] = useState('none');
 
     useEffect(() => {
@@ -97,9 +96,8 @@ function Properties() {
         const filtered = flats.filter(flat => {
             const cityMatch = flat.city.toLowerCase().includes(searchTerm.toLowerCase());
             const nameMatch = flat.name.toLowerCase().includes(searchTerm.toLowerCase());
-            const flatNameMatch = flat.flatName ? flat.flatName.toLowerCase().includes(searchTerm.toLowerCase()) : false;
 
-            return cityMatch || nameMatch || flatNameMatch;
+            return cityMatch || nameMatch
         });
 
         setFilteredFlats(filtered);
@@ -157,12 +155,12 @@ function Properties() {
                                         {flat.price}$
                                     </div>
                                     <div className="prop-info-title">
-                                        {flat.city}
+                                        {flat.name}
                                     </div>
                                 </div>
                                 <div className="prop-about-info">
                                     <div className="prop-address">
-                                        {flat.name}
+                                        {flat.city}
                                     </div>
                                     <div className="prop-flat-info">
                                         <span>{flat.bed} Beds</span>

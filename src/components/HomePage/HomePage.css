@@ -15,6 +15,23 @@
     align-items: center;
 }
 
+
+.home-page-banner button{
+    width: 20%;
+    border-radius: 6px;;
+    background: royalblue;
+    color: white;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+}
+
+.home-page-banner button:hover{
+    background: white;
+    color: royalblue;
+    transition: 0.3s;
+}
+
 .home-page-banner h1{
     color: white;
     text-shadow: 3px 3px 8px black;
@@ -229,4 +246,10 @@
 
 .bot-menu-element button:hover{
     opacity: 0.8;
+}
+
+@media(min-width: 320px) and(max-width: 500px) {
+ .home-page-banner {
+     margin-top: 100px;
+ }
 }

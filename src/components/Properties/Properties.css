@@ -145,3 +145,46 @@
     background-color: white;
     color: royalblue;
 }
+
+@media (min-width: 320px) and (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-evenly;
+    }
+
+    .header-logo a {
+        padding: 0;
+    }
+
+    .header-list ul {
+        font-size: 10px;
+    }
+
+    .properties-list {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px 10px;
+    }
+
+    .search-bar-div {
+        margin-top: 20px;
+    }
+
+    .search {
+        width: 230px;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+    .properties-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 30px;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1330px) {
+    .properties-list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 30px;
+    }
+}

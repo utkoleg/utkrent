@@ -141,3 +141,29 @@
 .sign-up-window-btn img{
     height: 55px;
 }
+
+@media(min-width: 320px) and (max-width: 500px) {
+    .sign-up-window {
+        margin-top: 120px;
+        padding-top: 20px;
+        width: 270px;
+        height: 480px;
+    }
+
+    .sign-btn {
+        margin-top: 10px;
+    }
+
+    .sign-up-window-btn div {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sign-up-window-btn img {
+        width: 40%;
+        height: 40%;
+    }
+}

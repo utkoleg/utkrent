@@ -7,19 +7,20 @@ import GooglePlay from "./img/google-play-store-icon.png"
 import Flat1 from "./img/flats/flat.jpg"
 import Flat2 from "./img/flats/flat2.jpg"
 import Flat3 from "./img/flats/flat3.jpg"
+import {useNavigate} from "react-router-dom";
 
 
 function HomePage() {
+    const navigate = useNavigate()
+    const goToProperties = () => {
+        navigate("/properties")
+    }
     return (
         <div>
-
             {/*ПОИСКОВАЯ СТРОКА*/}
             <div className="home-page-banner">
                 <h1>Find your dream place</h1>
-                <div className="searchbar">
-                    <input placeholder="Input your desired city"/>
-                    <button>Search</button>
-                </div>
+                <button onClick={goToProperties}>See all offers</button>
             </div>
 
             {/*МЕДИА*/}
